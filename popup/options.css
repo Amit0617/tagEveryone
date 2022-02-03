@@ -1,4 +1,17 @@
 .button {
+    margin : 2% auto;
+    text-align : center;
     border-radius : 999px;
     border: solid;
+    font-size : 20px;
+    cursor : pointer;
+    padding : 5px;
+}
+
+.button:hover {
+
+}
+
+#error {
+    display : hidden;
 }

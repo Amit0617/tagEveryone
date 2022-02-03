@@ -4,7 +4,7 @@
         return;
     }
     window.hasRun = true;
-//console.log("hi");
+console.log("hi");
     function tagEveryone() {
         document.querySelector('._24-Ff').click();
         var el = document.querySelector('div.zzgSd._3e6xi span').innerText;
