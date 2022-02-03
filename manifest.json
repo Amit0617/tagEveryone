@@ -2,7 +2,8 @@
 
   "manifest_version": 2,
   "name": "@everyone",
-  "version": "1.3.5",
+  "version": "2.0",
+  "homepage_url": "https://github.com/Amit0617/tagEveryone",
   "description": "Tags Everyone in a WhatsApp group",
   "icons": {
     "48": "icons/everyone-48.png",
@@ -15,11 +16,9 @@
   
   "browser_action": {
     "default_icon": "icons/everyone-32.png",
-    "default_title": "tagEveryone!"
-  },  
-
-  "background": {
-    "scripts": ["background.js"]
+    "default_title": "tagEveryone!",
+    "default_popup": "popup/options.html",
+    "browser_style": true
   }
 
 }
