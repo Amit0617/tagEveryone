@@ -4,7 +4,7 @@
         return;
     }
     window.hasRun = true;
-console.log("hi");
+    console.log("hi");
     function tagEveryone() {
         document.querySelector('._24-Ff').click();
         var el = document.querySelector('div.zzgSd._3e6xi span').innerText;
@@ -27,9 +27,9 @@ console.log("hi");
             typespace.innerHTML = tagcode + '<br><i>Members whose name are saved on your device can\'t be tagged 🤖</i>';}
         else
             typespace.innerHTML = tagcode;
-}
+    }
 
-//tag admins
+    //tag admins
     function tagAdmins() {
         var countAdmins = document.querySelectorAll("._3bTNW").length;
         console.log(countAdmins);
@@ -63,14 +63,14 @@ console.log("hi");
         else
             typespace.innerHTML =tagAdmins;
     }
-//Listen for messages from popup
-browser.runtime.onMessage.addListener((message) => {
-    if (message.command === "everyone") {
-        tagEveryone();
-    }
-    else if (message.command === "admins") {
-        tagAdmins();
-    }
-})
+    //Listen for messages from popup
+    browser.runtime.onMessage.addListener((message) => {
+        if (message.command === "everyone") {
+            tagEveryone();
+        }
+        else if (message.command === "admins") {
+            tagAdmins();
+        }
+    })
 
 })();

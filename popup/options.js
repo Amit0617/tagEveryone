@@ -7,7 +7,7 @@ function listenClicks() {
         }
 
         function getError(error) {
-            console.error(`Could not beastify: ${error}`);
+            console.error(`Could not tag: ${error}`);
         }
 
         if (e.target.classList.contains("everyone")){
@@ -17,6 +17,8 @@ function listenClicks() {
         else if (e.target.classList.contains("admins")){
             browser.tabs.query({active: true, currentWindow: true}).then(triggerTag).catch(getError);
         }
+
+        console.log("triggered");
 
     });
 }

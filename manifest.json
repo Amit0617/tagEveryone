@@ -17,8 +17,7 @@
   "browser_action": {
     "default_icon": "icons/everyone-32.png",
     "default_title": "tagEveryone!",
-    "default_popup": "popup/options.html",
-    "browser_style": true
+    "default_popup": "popup/options.html"
   }
 
 }
