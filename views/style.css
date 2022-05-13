@@ -5,20 +5,15 @@ body {
     height: 55.62vw;
     margin: 0 5% 0 5%;
     border-radius: 20px;
-    /* background-color: #171785; */
-    /* background-image: linear-gradient(135deg, #171785 0%, #4158D0 27%, #C850C0 64%, #FFCC70 100%); */
-    
 }
 
 h1 {
     color: rgb(17, 0, 170);
     text-decoration: solid;
-    /* position: fixed; */
 }
 
 h4 {
     color: rgb(14, 75, 189);
-    /* position: fixed; */
     top: 10vh;
 }
 
@@ -33,71 +28,6 @@ h3 {
 .logo{
     width: 50px;
     height: 50px;
-}
-aside {
-    border: solid 0.1px lightblue;
-    background-color: white;
-    border-radius: 10px;;
-    float: right;
-    width: 220px;
-    margin-right: 100px;
-}
-
-.bottom-line {
-    float: right;
-    clear: right;
-    width:fit-content;
-    text-align: center;
-    padding-right: 30%;
-}
-
-.button {
-    width: 80px;
-    /* right: 0px; */
-    float: right;
-    clear: right;
-    /* margin-right: 70px; */
-    text-align: center;
-    border-radius: 999px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    font-size: 20px;
-    font-family: 'NimbusSans-Regular';
-    position: relative;
-    display: flex;
-    padding: 10px 68.5px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03));
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 0% 100%;
-    transition: background-size .5s, color .5s;
-}
-
-.button:hover {
-    background-size: 100% 100%;
-}
-
-.button:active {
-    position: relative;
-    top: 1px;
-}
-
-svg {
-    position: absolute;
-    left: 4px;
-    top: 3px;
-    background-color: rgba(255, 255, 255);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    border-radius: 50%;
-    padding: 1px;
-}
-
-.bottom-line {
-    font-size: 16px;
-    text-align: center;
-}
-
-#error {
-    display: none;
 }
 
 footer {
