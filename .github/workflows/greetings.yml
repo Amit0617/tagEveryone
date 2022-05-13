@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Thanks for taking time and taking this issue into light. If you feel you can fix that feel free to do that. That would be highly appreciated.'
+        pr-message: 'Thanks for taking time and doing the required. It becomes easy if everyone moves stone even by a inch.'
