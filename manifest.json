@@ -9,6 +9,13 @@
     "48": "icons/everyone-48.png",
     "96": "icons/everyone-96.png"
   },
+
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/"],
+      "js": ["/content_scripts/tagging.js"]
+    }
+  ],
   
   "permissions": [
     "activeTab"
@@ -17,7 +24,7 @@
   "browser_action": {
     "default_icon": "icons/everyone-32.png",
     "default_title": "tagEveryone!",
-    "default_popup": "popup/options.html"
+    "default_popup": "popup/popup.html"
   }
 
 }

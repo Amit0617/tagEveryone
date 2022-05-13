@@ -1,0 +1,49 @@
+
+body {
+  user-select: none;
+}
+
+.button {
+  margin : 2% auto;
+  text-align : center;
+  border-radius : 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-size : 20px;
+  font-family: 'NimbusSans-Regular';
+  position: relative;
+  display: flex;
+  padding: 10px 68.5px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03));
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size .5s, color .5s;
+}
+
+.button:hover {
+  background-size: 100% 100%;
+}
+
+.button:active {
+  position: relative;
+  top: 1px;
+}
+
+svg {
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  background-color: rgba(255,255,255);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  padding: 1px;
+}
+
+.bottom-line {
+  font-size: 16px;
+  text-align: center;
+}
+
+#error {
+  display : none;
+}
