@@ -6,24 +6,41 @@
     window.hasRun = true;
     console.log("@everyone extension");
     function tagEveryone() {
+        //open right side view
         document.querySelector('._24-Ff').click();
-        let el = document.querySelector('div.zzgSd._3e6xi span').innerText;
-        let premembers = el.replace(/[^0-9\,]/g, '');
-        let members0 = premembers.split(',');
-        let members1 = members0.filter((a) => a);
+
+        //get all the numbers from the top div of group
+        var el = document.querySelector('div.zzgSd._3e6xi span').innerText;
+
+        //Regex to allow only 0-9 and comma(helpful for specially tagging international numbers consisting `(`, `)` or `+` )
+        var premembers = el.replace(/[^0-9\,]/g, '');
+
+        //Creating array from string of numbers separated by comma
+        var members0 = premembers.split(',');
+
+        //Filtering some undefined things out of that (if any)
+        var members1 = members0.filter((a) => a);
         //console.log(el);
         //console.log(members1);
-        let participants = document.querySelector('span.x2dsD._1lF7t.bze30y65.a4ywakfo');
-        let actualCountParticipants = participants.innerText.replace('participants', '');
-        let countparticipants = members1.length;
+
+        // Get group participants consisting element
+        var participants = document.querySelector('span.x2dsD._1lF7t.bze30y65.a4ywakfo');
+        var actualCountParticipants = participants.innerText.replace('participants', '');
+
+        var countparticipants = members1.length; //participants after removing saved names and 'You'
         //console.log(countparticipants);
-        let tagcode = "";
-        for (let i = 0; i < countparticipants; i++) {
+
+        var tagcode = "";
+        for (var i = 0; i < countparticipants; i++) {
             tagcode += '<span class="copyable-text selectable-text" data-mention-jid="' + members1[i] + '@c.us" data-original-name="@name" data-plain-text="@name" data-app-text-template="​' + members1[i] + '@c.us​"><span class="at-symbol">@</span><span dir="ltr">name</span></span>';
+
         };
         //console.log(tagcode);
-        let typespace = document.querySelectorAll('._13NKt')[2];
-        if (members1.length < actualCountParticipants - 1) {
+
+        // Get typing box
+        var typespace = document.querySelectorAll('._13NKt')[2];
+//         var typespace = document.querySelectorAll('div.fd365im1.to2l77zo.bbv8nyr4.mwp4sxku.gfz4du6o.ag5g9lrv')[0];
+        if (countparticipants < actualCountParticipants - 1) {
             typespace.innerHTML = tagcode + '<br><i>Members whose name are saved on your device can\'t be tagged 🤖</i>';
         }
         else
@@ -32,33 +49,39 @@
 
     //tag admins
     function tagAdmins() {
-        let countAdmins = document.querySelectorAll("._3bTNW").length;
-        console.log(countAdmins);
 
-        let adminNo = "";
-        for (let i = 0; i < countAdmins; i++) {
+        //open right side view
+        document.querySelector('._24-Ff').click();
+
+        //Count elements consisting "admin" tag
+        var countAdmins = document.querySelectorAll("._3bTNW").length;
+        console.log("No. of Admins", countAdmins);
+
+        var adminNo = "";
+        for (var i = 0; i < countAdmins; i++) {
             adminNo += document.querySelectorAll("._3bTNW")[i].parentNode.parentNode.childNodes[0].innerText + ',';
         }
         // console.log(adminNo);
 
         //sanitisation
-        let preAdmins0 = adminNo.replace(/[^0-9\,]/g, '');
-        let preAdmins1 = preAdmins0.replace(/\s/g, '');
+        var preAdmins0 = adminNo.replace(/[^0-9\,]/g, '');
+        var preAdmins1 = preAdmins0.replace(/\s/g, '');
 
         //make array
-        let admins = preAdmins1.split(',');
-        let admins1 = admins.filter((a) => a);
+        var admins = preAdmins1.split(',');
+        var admins1 = admins.filter((a) => a);
         //console.log(admins1);
 
         //tag them
-        let tagAdmins = "";
-        for (let j = 0; j < countAdmins; j++) {
+        var tagAdmins = "";
+        for (var j = 0; j < admins1.length; j++) {
             tagAdmins += '<span class="copyable-text selectable-text" data-mention-jid="' + admins1[j] + '@c.us" data-original-name="@adminName" data-plain-text="@adminName" data-app-text-template="' + admins1[j] + '@c.us"><span class="at-symbol">@</span><span dir="ltr">adminName</span></span> ';
         };
 
-        let typespace = document.querySelectorAll('._13NKt')[2];
+        var typespace = document.querySelectorAll('._13NKt')[2];
+//         var typespace = document.querySelectorAll('p.selectable-text.copyable-text')[0];
         if (admins1.length < countAdmins) {
-            typespace.innerHTML = tagAdmins + ' <br><i>Members whose name are saved on your device can\'t be tagged 🤖</i> ';
+            typespace.innerHTML = tagAdmins + ' <br><i>Members whose names are saved on your device or your name can\'t be tagged 🤖</i> ';
         }
         else
             typespace.innerHTML = tagAdmins;
