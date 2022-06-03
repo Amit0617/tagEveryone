@@ -14,4 +14,4 @@ Tag everyone and admins in a whatsapp group like discord
 * Make options available in context menu.
 * Make UI more suggestive. For example, show warning in popup if typing box is empty.
 * Add roles according to reactions.
-  \* Add their tagging buttons.
+  \(* Add their tagging buttons.
