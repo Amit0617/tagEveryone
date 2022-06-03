@@ -6,8 +6,9 @@ Tag everyone and admins in a whatsapp group like discord
 * Click on "Add to firefox".
 
 ### Features
-* Tag all^* members of group.
-* Tag all^* admins of group.
+* Tag all<sup>*</sup> members of group.
+* Tag all<sup>*</sup> admins of group.
+<sup>*</sup> all the numbers which are not saved into your device.
 
 ### ToDo
 * Make options available in context menu.
