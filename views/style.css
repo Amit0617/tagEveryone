@@ -37,6 +37,11 @@ h3 {
     height: 50px;
 }
 
+iframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 footer {
     display: flex;
     justify-content: center;

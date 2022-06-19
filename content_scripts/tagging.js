@@ -39,7 +39,7 @@
 
         // Get typing box
         var typespace = document.querySelectorAll('._13NKt')[2];
-//         var typespace = document.querySelectorAll('div.fd365im1.to2l77zo.bbv8nyr4.mwp4sxku.gfz4du6o.ag5g9lrv')[0];
+        //         var typespace = document.querySelectorAll('div.fd365im1.to2l77zo.bbv8nyr4.mwp4sxku.gfz4du6o.ag5g9lrv')[0];
         if (countparticipants < actualCountParticipants - 1) {
             typespace.innerHTML = tagcode + '<br><i>Members whose name are saved on your device can\'t be tagged 🤖</i>';
         }
@@ -79,7 +79,7 @@
         };
 
         var typespace = document.querySelectorAll('._13NKt')[2];
-//         var typespace = document.querySelectorAll('p.selectable-text.copyable-text')[0];
+        //         var typespace = document.querySelectorAll('p.selectable-text.copyable-text')[0];
         if (admins1.length < countAdmins) {
             typespace.innerHTML = tagAdmins + ' <br><i>Members whose names are saved on your device or your name can\'t be tagged 🤖</i> ';
         }
@@ -98,5 +98,25 @@
             tagAdmins();
         }
     })
+
+    //Listen for installation of extension
+    browser.runtime.onInstalled.addListener(async ({ reason, temporary }) => {
+        if (temporary) return; // skip during development
+        switch (reason) {
+            case "install":
+                {
+                    const url = browser.runtime.getURL("views/index.html");
+                    await browser.tabs.create({ url });
+                }
+                break;
+
+            case "update":
+                {
+                    const url = "https://github.com/Amit0617/tagEveryone/wiki/Updates/";
+                    await browser.tabs.create({ url });
+                }
+                break;
+        }
+    });
 
 })();
