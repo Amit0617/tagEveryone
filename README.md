@@ -8,6 +8,7 @@ Tag everyone and admins in a whatsapp group like discord
 ### Features
 * Tag all<sup>+</sup> members of group.  
 * Tag all<sup>+</sup> admins of group.  
+    
  <sup>+all the numbers which are not saved into your device.</sup>
 
 ### ToDo
