@@ -99,24 +99,4 @@
         }
     })
 
-    //Listen for installation of extension
-    browser.runtime.onInstalled.addListener(async ({ reason, temporary }) => {
-        if (temporary) return; // skip during development
-        switch (reason) {
-            case "install":
-                {
-                    const url = browser.runtime.getURL("views/index.html");
-                    await browser.tabs.create({ url });
-                }
-                break;
-
-            case "update":
-                {
-                    const url = "https://github.com/Amit0617/tagEveryone/wiki/Updates/";
-                    await browser.tabs.create({ url });
-                }
-                break;
-        }
-    });
-
 })();
