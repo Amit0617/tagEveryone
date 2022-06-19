@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "@everyone",
-  "version": "2.3",
+  "version": "2.4",
   "homepage_url": "https://github.com/Amit0617/tagEveryone",
   "description": "Tags Everyone in a WhatsApp group",
   "icons": {
@@ -12,7 +12,7 @@
 
   "content_scripts": [
     {
-      "matches": ["https://web.whatsapp.com/", "<all_urls>"],
+      "matches": ["https://web.whatsapp.com/"],
       "js": ["/content_scripts/tagging.js"]
     }
   ],
